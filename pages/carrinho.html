@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon"
+        href="../img/favicon.png"
+        type="image/x-icon">
+
+    <link rel="stylesheet"
+        href="../css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+
+    <title>Nova Tech Store - Carrinho</title>
+
+</head>
+
+<body>
+
+
+    <header class="navbar">
+
+        <div class="logo">
+            ⚡ Nova Tech
+        </div>
+
+        <nav>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="../index.html">
+                        Início
+                    </a>
+                </li>
+
+                <li>
+                    <a href="produtos.html">
+                        Produtos
+                    </a>
+                </li>
+
+                <!-- <li>
+                    <a href="detalhes.html">
+                        Detalhes
+                    </a>
+                </li> -->
+
+                <li>
+                    <a href="carrinho.html"
+                        class="active">
+                        🛒 Carrinho
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../doc/catalogo.pdf"
+                        target="_blank">
+                        📄 Catálogo
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main class="pagina-carrinho">
+
+
+        <section class="cabecalho-carrinho">
+
+            <span>
+                NOVA TECH STORE
+            </span>
+
+            <h1>
+                🛒 Meu Carrinho
+            </h1>
+
+            <p>
+                Confira seus produtos antes
+                de finalizar o pedido.
+            </p>
+
+        </section>
+
+
+        <!-- PRODUTOS DO CARRINHO -->
+
+        <section id="lista-carrinho"
+            class="lista-carrinho">
+
+            <!-- O JavaScript vai inserir
+                 os produtos aqui -->
+
+        </section>
+
+
+        <!-- TOTAL -->
+
+        <section class="resumo-carrinho">
+
+            <h2>
+                Resumo do pedido
+            </h2>
+
+            <p>
+                Total:
+                <strong id="total-carrinho">
+                    R$ 0,00
+                </strong>
+            </p>
+
+        </section>
+
+
+        <!-- FORMULÁRIO -->
+
+        <section class="formulario-pedido">
+
+            <h2>
+                Finalizar pedido
+            </h2>
+
+            <p>
+                Preencha seus dados para
+                enviar o pedido ao vendedor.
+            </p>
+
+
+            <form id="form-pedido">
+
+
+                <label for="nome">
+                    Nome completo
+                </label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Digite seu nome"
+                    required>
+
+
+                <label for="email">
+                    E-mail
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="seu@email.com"
+                    required>
+
+
+                <label for="telefone">
+                    Telefone
+                </label>
+
+                <input
+                    type="tel"
+                    id="telefone"
+                    name="telefone"
+                    placeholder="(21) 99999-9999"
+                    required>
+
+
+                <label for="endereco">
+                    Endereço
+                </label>
+
+                <input
+                    type="text"
+                    id="endereco"
+                    name="endereco"
+                    placeholder="Rua, número e bairro"
+                    required>
+
+
+                <label for="pagamento">
+                    Forma de pagamento
+                </label>
+
+                <select
+                    id="pagamento"
+                    name="pagamento"
+                    required>
+
+                    <option value="">
+                        Selecione
+                    </option>
+
+                    <option value="Pix">
+                        PIX
+                    </option>
+
+                    <option value="Cartão de crédito">
+                        Cartão de crédito
+                    </option>
+
+                    <option value="Cartão de débito">
+                        Cartão de débito
+                    </option>
+
+                </select>
+
+
+                <button
+                    type="submit"
+                    class="btn-primary">
+
+                    📱 Enviar pedido pelo WhatsApp
+
+                </button>
+
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <strong>
+            ⚡ Nova Tech Store
+        </strong>
+
+        <p>
+            © 2026 Nova Tech Store
+        </p>
+
+    </footer>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>
