@@ -114,14 +114,34 @@
                 specs: ['Processador Intel i9', '32GB RAM', 'SSD 1TB NVMe', 'GPU 8GB']
             },
             {
+                id: 'notebook-003',
+                name: 'Notebook Gamer Ultra',
+                price: 8999.90,
+                img: '../img/Notebook Gamer2.png',
+                thumbs: ['../img/Notebook Gamer2.png', '../img/Notebook Gamer.png'],
+                category: 'NOTEBOOK',
+                description: 'Experiência premium para usuários exigentes, com visual moderno e alto desempenho.',
+                specs: ['Processador Intel i9 Extreme', '64GB RAM', 'SSD 2TB NVMe', 'Tela 165Hz']
+            },
+            {
                 id: 'teclado-001',
                 name: 'Teclado Mecânico',
                 price: 349.90,
-                img: '../img/Teclado Mecanico.jpg',
-                thumbs: ['../img/Teclado Mecanico.jpg'],
+                img: '../img/Teclado Mecânico.jpg',
+                thumbs: ['../img/Teclado Mecânico.jpg'],
                 category: 'PERIFÉRICO',
                 description: 'Precisão e resposta rápida para jogos e trabalho.',
                 specs: ['Switch mecânico', 'Anti-ghosting', 'Construção em alumínio']
+            },
+            {
+                id: 'teclado-002',
+                name: 'Teclado Mecânico RGB',
+                price: 429.90,
+                img: '../img/Teclado Mecânico1.jpg',
+                thumbs: ['../img/Teclado Mecânico1.jpg', '../img/Teclado Mecânico.jpg'],
+                category: 'GAMING',
+                description: 'Iluminação RGB, construção robusta e precisão para seu setup gamer.',
+                specs: ['RGB customizável', 'Switch mecânico', 'Anti-ghosting', 'Cabo reforçado']
             },
             {
                 id: 'mouse-001',
@@ -175,7 +195,7 @@
             nameEl.textContent = product.name;
             descEl.textContent = product.description;
             priceEl.textContent = formatBRL(product.price);
-            breadcrumb.textContent = product.name;
+            if (breadcrumb) breadcrumb.textContent = product.name;
 
             // specs
             specsEl.innerHTML = '';
@@ -224,7 +244,7 @@
             related.forEach(r => {
                 const card = document.createElement('div');
                 card.className = 'related-card';
-                card.style.cssText = 'width:140px;padding:8px;border-radius:8px;background:rgba(255,255,255,0.02);text-align:center';
+
                 card.innerHTML = `
         <img src="${r.img}" alt="${r.name}" style="width:100%;height:90px;object-fit:cover;border-radius:6px;margin-bottom:8px">
         <div style="font-weight:700;font-size:0.95rem">${r.name}</div>

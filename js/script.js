@@ -175,10 +175,26 @@ function initCartPage() {
     const cartBody = document.getElementById('cart-body');
     const cartWrapper = document.getElementById('cart-wrapper');
     const emptyMsg = document.getElementById('cart-empty');
-    const totalEl = document.getElementById('cart-total') || document.getElementById('total-carrinho') || document.getElementById('total-carrinho');
+    const totalEl = document.getElementById('cart-total') || document.getElementById('total-carrinho');
+    const subtotalEl = document.getElementById('subtotal-carrinho');
 
     function formatBRL(value) {
         return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+
+    const productImages = {
+        'notebook-001': 'Notebook Gamer.png',
+        'notebook-002': 'Notebook Gamer1.png',
+        'notebook-003': 'Notebook Gamer2.png',
+        'teclado-001': 'Teclado Mecânico.jpg',
+        'teclado-002': 'Teclado Mecânico1.jpg',
+        'mouse-001': 'Mouse Gamer.jpg'
+    };
+
+    function updateTotals() {
+        const total = formatBRL(cartTotal());
+        if (totalEl) totalEl.textContent = total;
+        if (subtotalEl) subtotalEl.textContent = total;
     }
 
     function render() {
@@ -193,7 +209,7 @@ function initCartPage() {
             lista.innerHTML = '';
             if (!cart || cart.length === 0) {
                 lista.innerHTML = '<div class="center text-muted">Seu carrinho está vazio.</div>';
-                if (totalEl) totalEl.textContent = formatBRL(0);
+                updateTotals();
                 return;
             }
             cart.forEach(item => {
@@ -201,7 +217,7 @@ function initCartPage() {
                 div.className = 'item-carrinho';
                 div.innerHTML = `
           <div class="item-thumb">
-            <img src="../img/${item.id}.png" alt="${item.name}" onerror="this.src='../img/placeholder.png'">
+            <img src="../img/${productImages[item.id] || 'favicon.png'}" alt="${item.name}">
           </div>
           <div class="item-info">
             <div class="nome">${item.name}</div>
@@ -217,7 +233,7 @@ function initCartPage() {
         `;
                 lista.appendChild(div);
             });
-            if (totalEl) totalEl.textContent = formatBRL(cartTotal());
+            updateTotals();
         }
 
         // versão tabela (se existir)
@@ -225,7 +241,7 @@ function initCartPage() {
             if (!cart || cart.length === 0) {
                 if (cartWrapper) cartWrapper.classList.add('hidden');
                 if (emptyMsg) emptyMsg.classList.remove('hidden');
-                if (totalEl) totalEl.textContent = formatBRL(0);
+                updateTotals();
                 return;
             }
             if (cartWrapper) cartWrapper.classList.remove('hidden');
@@ -246,7 +262,7 @@ function initCartPage() {
         `;
                 cartBody.appendChild(tr);
             });
-            if (totalEl) totalEl.textContent = formatBRL(cartTotal());
+            updateTotals();
         }
     }
 
@@ -281,31 +297,44 @@ function initCartPage() {
         });
     }
 
-    // checkout via WhatsApp (se existir botão)
-    const checkoutBtn = document.getElementById('checkout');
-    if (checkoutBtn) {
-        checkoutBtn.addEventListener('click', () => {
+    // checkout via WhatsApp (botão dedicado ou submit do formulário)
+    function sendCheckout() {
             const cart = getCart();
             if (!cart || cart.length === 0) { alert('Seu carrinho está vazio.'); return; }
             // coleta dados do formulário se existir
             const form = document.getElementById('form-pedido');
-            let nome = '', email = '', telefone = '', endereco = '', pagamento = '';
+            let nome = '', email = '', telefone = '', endereco = '', pagamento = '', entrega = '', horario = '', observacoes = '';
             if (form) {
                 nome = form.nome?.value || '';
                 email = form.email?.value || '';
                 telefone = form.telefone?.value || '';
                 endereco = form.endereco?.value || '';
                 pagamento = form.pagamento?.value || '';
+                entrega = form.entrega?.value || '';
+                horario = form.horario?.value || '';
+                observacoes = form.observacoes?.value || '';
             }
             let msg = `Olá, tenho interesse na compra:%0A`;
             cart.forEach(i => {
                 msg += `- ${i.name} (SKU: ${i.id}) x${i.qty} = ${Number(i.price).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}%0A`;
             });
             msg += `%0ATotal: ${cartTotal().toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}%0A`;
-            msg += `%0ADados:%0ANome: ${nome}%0AEmail: ${email}%0ATelefone: ${telefone}%0AEndereço: ${endereco}%0APagamento: ${pagamento}`;
+            msg += `%0ADados:%0ANome: ${nome}%0AEmail: ${email}%0ATelefone: ${telefone}%0AEndereço: ${endereco}%0APagamento: ${pagamento}%0AEntrega: ${entrega}%0AHorário: ${horario}%0AObservações: ${observacoes}`;
             const vendedor = '5511999999999'; // substitua pelo número real
             const url = `https://wa.me/${vendedor}?text=${msg}`;
             window.open(url, '_blank');
+    }
+
+    const checkoutBtn = document.getElementById('checkout');
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', sendCheckout);
+    }
+
+    const orderForm = document.getElementById('form-pedido');
+    if (orderForm) {
+        orderForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            sendCheckout();
         });
     }
 

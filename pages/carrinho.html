@@ -56,7 +56,7 @@
                 <li>
                     <a href="carrinho.html"
                         class="active">
-                        🛒 Carrinho
+                        🛒 Carrinho <span id="cart-count">0</span>
                     </a>
                 </li>
 
@@ -74,7 +74,7 @@
     </header>
 
 
-    <main class="pagina-carrinho">
+    <main class="pagina-carrinho checkout-store">
 
 
         <section class="cabecalho-carrinho">
@@ -97,36 +97,40 @@
 
         <!-- PRODUTOS DO CARRINHO -->
 
-        <section id="lista-carrinho"
-            class="lista-carrinho">
+        <div class="checkout-grid">
+            <section class="checkout-bag" aria-labelledby="titulo-sacola">
+                <div class="checkout-panel-title">
+                    <div>
+                        <span>SACOLA</span>
+                        <h2 id="titulo-sacola">Produtos escolhidos</h2>
+                    </div>
+                    <a href="produtos.html" class="mini-link">+ continuar comprando</a>
+                </div>
 
-            <!-- O JavaScript vai inserir
-                 os produtos aqui -->
+                <div id="lista-carrinho" class="lista-carrinho">
+                    <!-- O JavaScript vai inserir os produtos aqui -->
+                </div>
+            </section>
 
-        </section>
+            <aside class="resumo-carrinho checkout-summary" aria-labelledby="titulo-resumo">
+                <span class="summary-eyebrow">CHECKOUT SEGURO</span>
+                <h2 id="titulo-resumo">Resumo do pedido</h2>
+                <div class="summary-line">
+                    <span>Subtotal</span>
+                    <strong id="subtotal-carrinho">R$ 0,00</strong>
+                </div>
+                <div class="summary-line">
+                    <span>Frete fictício</span>
+                    <strong class="free-shipping">Grátis</strong>
+                </div>
+                <div class="summary-total">
+                    <span>Total</span>
+                    <strong id="total-carrinho">R$ 0,00</strong>
+                </div>
+                <p class="summary-note">Pedido demonstrativo enviado por WhatsApp. Nenhuma cobrança é realizada neste site.</p>
+            </aside>
 
-
-        <!-- TOTAL -->
-
-        <section class="resumo-carrinho">
-
-            <h2>
-                Resumo do pedido
-            </h2>
-
-            <p>
-                Total:
-                <strong id="total-carrinho">
-                    R$ 0,00
-                </strong>
-            </p>
-
-        </section>
-
-
-        <!-- FORMULÁRIO -->
-
-        <section class="formulario-pedido">
+            <section class="formulario-pedido checkout-form">
 
             <h2>
                 Finalizar pedido
@@ -217,18 +221,39 @@
                 </select>
 
 
-                <button
-                    type="submit"
-                    class="btn-primary">
+                <div class="form-row">
+                    <div>
+                        <label for="entrega">Preferência de entrega</label>
+                        <select id="entrega" name="entrega" required>
+                            <option value="">Selecione</option>
+                            <option value="Retirada na loja">Retirada na loja</option>
+                            <option value="Entrega expressa">Entrega expressa</option>
+                            <option value="Entrega agendada">Entrega agendada</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="horario">Melhor horário</label>
+                        <select id="horario" name="horario" required>
+                            <option value="">Selecione</option>
+                            <option value="Manhã">Manhã</option>
+                            <option value="Tarde">Tarde</option>
+                            <option value="Noite">Noite</option>
+                        </select>
+                    </div>
+                </div>
 
+                <label for="observacoes">Observações</label>
+                <textarea id="observacoes" name="observacoes" placeholder="Ex.: cor preferida, dúvidas ou ponto de referência"></textarea>
+
+                <button type="submit" class="btn-primary">
                     📱 Enviar pedido pelo WhatsApp
-
                 </button>
 
 
             </form>
 
-        </section>
+            </section>
+        </div>
 
     </main>
 
