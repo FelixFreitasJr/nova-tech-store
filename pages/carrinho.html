@@ -2,101 +2,44 @@
 <html lang="pt-br">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-    <link rel="shortcut icon"
-        href="../img/favicon.png"
-        type="image/x-icon">
-
-    <link rel="stylesheet"
-        href="../css/style.css">
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/produtos.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-
     <title>Nova Tech Store - Carrinho</title>
-
 </head>
 
 <body>
 
 
     <header class="navbar">
-
-        <div class="logo">
-            ⚡ Nova Tech
-        </div>
+        <div class="logo">⚡ Nova Tech</div>
 
         <nav>
-
             <ul class="nav-links">
-
-                <li>
-                    <a href="../index.html">
-                        Início
-                    </a>
-                </li>
-
-                <li>
-                    <a href="produtos.html">
-                        Produtos
-                    </a>
-                </li>
-
-                <!-- <li>
-                    <a href="detalhes.html">
-                        Detalhes
-                    </a>
-                </li> -->
-
-                <li>
-                    <a href="carrinho.html"
-                        class="active">
-                        🛒 Carrinho <span id="cart-count">0</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="../doc/catalogo.pdf"
-                        target="_blank">
-                        📄 Catálogo
-                    </a>
-                </li>
-
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="produtos.html" >Produtos</a></li>
+                <li><a href="carrinho.html" class="active">🛒 Carrinho <span id="cart-count">0</span></a></li>
+                <li><a href="../doc/catalogo.pdf" target="_blank">📄 Catálogo</a></li>
             </ul>
-
         </nav>
-
     </header>
-
 
     <main class="pagina-carrinho checkout-store">
 
-
         <section class="cabecalho-carrinho">
-
-            <span>
-                NOVA TECH STORE
-            </span>
-
-            <h1>
-                🛒 Meu Carrinho
-            </h1>
-
-            <p>
-                Confira seus produtos antes
-                de finalizar o pedido.
-            </p>
-
+            <span>NOVA TECH STORE</span>
+            <h1>🛒 Meu Carrinho</h1>
+            <p>Confira seus produtos antes de finalizar o pedido.</p>
         </section>
 
-
         <!-- PRODUTOS DO CARRINHO -->
-
         <div class="checkout-grid">
             <section class="checkout-bag" aria-labelledby="titulo-sacola">
                 <div class="checkout-panel-title">
@@ -132,94 +75,22 @@
 
             <section class="formulario-pedido checkout-form">
 
-            <h2>
-                Finalizar pedido
-            </h2>
-
-            <p>
-                Preencha seus dados para
-                enviar o pedido ao vendedor.
-            </p>
-
+            <h2>Finalizar pedido</h2>
+            <p>Preencha seus dados para enviar o pedido ao vendedor.</p>
 
             <form id="form-pedido">
 
-
-                <label for="nome">
-                    Nome completo
-                </label>
-
-                <input
-                    type="text"
-                    id="nome"
-                    name="nome"
-                    placeholder="Digite seu nome"
-                    required>
-
-
-                <label for="email">
-                    E-mail
-                </label>
-
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="seu@email.com"
-                    required>
-
-
-                <label for="telefone">
-                    Telefone
-                </label>
-
-                <input
-                    type="tel"
-                    id="telefone"
-                    name="telefone"
-                    placeholder="(21) 99999-9999"
-                    required>
-
-
-                <label for="endereco">
-                    Endereço
-                </label>
-
-                <input
-                    type="text"
-                    id="endereco"
-                    name="endereco"
-                    placeholder="Rua, número e bairro"
-                    required>
-
-
-                <label for="pagamento">
-                    Forma de pagamento
-                </label>
-
-                <select
-                    id="pagamento"
-                    name="pagamento"
-                    required>
-
-                    <option value="">
-                        Selecione
-                    </option>
-
-                    <option value="Pix">
-                        PIX
-                    </option>
-
-                    <option value="Cartão de crédito">
-                        Cartão de crédito
-                    </option>
-
-                    <option value="Cartão de débito">
-                        Cartão de débito
-                    </option>
-
+                <label for="nome">Nome completo </label><input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                <label for="email">E-mail </label><input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                <label for="telefone">Telefone </label><input type="tel"  id="telefone" name="telefone"  placeholder="(21) 99999-9999" required>
+                <label for="endereco">Endereço </label><input type="text"  id="endereco" name="endereco" placeholder="Rua, número e bairro" required>
+                <label for="pagamento">Forma de pagamento </label>
+                <select id="pagamento" name="pagamento" required>
+                    <option value="">Selecione</option>
+                    <option value="Pix">PIX</option>
+                    <option value="Cartão de crédito">Cartão de crédito</option>
+                    <option value="Cartão de débito">Cartão de débito</option>
                 </select>
-
 
                 <div class="form-row">
                     <div>
@@ -245,34 +116,21 @@
                 <label for="observacoes">Observações</label>
                 <textarea id="observacoes" name="observacoes" placeholder="Ex.: cor preferida, dúvidas ou ponto de referência"></textarea>
 
-                <button type="submit" class="btn-primary">
-                    📱 Enviar pedido pelo WhatsApp
-                </button>
-
-
+                <button type="submit" class="btn-primary">📱 Enviar pedido pelo WhatsApp</button>
+                <button type="reset" class="btn-secondary">Cancelar</button>
             </form>
-
             </section>
         </div>
-
     </main>
 
-
     <footer>
-
-        <strong>
-            ⚡ Nova Tech Store
-        </strong>
-
-        <p>
-            © 2026 Nova Tech Store
-        </p>
-
+        <div>
+            <strong>⚡ Nova Tech Store</strong> <p>Tecnologia para o seu próximo nível.</p>
+        </div>
+        <p>© 2026 Nova Tech Store | Desenvolvido por <a href="https://github.com" target="_blank"> Felix Freitas Jr</a></p>
     </footer>
-
 
     <script src="../js/script.js"></script>
 
 </body>
-
 </html>
