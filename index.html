@@ -1,104 +1,77 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <title>Nova Tech Store | Início</title>
+    <link rel="icon" href="img/favicon.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-    <title>Nova Tech Store</title>
 </head>
-
 <body>
-
-    <header class="navbar">
-        <div class="logo">⚡ Nova Tech</div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Início</a></li>
-                <li><a href="pages/produtos.html">Produtos</a></li>
-                <li><a href="pages/carrinho.html">🛒 Carrinho</a></li>
-                <li><a href="doc/catalogo.pdf" target="_blank">📄 Catálogo</a></li>
-            </ul>
-        </nav>
+    <header class="cabecalho">
+        <div class="limite">
+            <p class="logo">Nova <span>Tech</span> Store</p>
+            <nav aria-label="Menu principal">
+                <ul class="menu">
+                    <li><a class="ativo" href="index.html">Início</a></li>
+                    <li><a href="pages/produtos.html">Produtos</a></li>
+                    <li><a href="pages/detalhes.html">Detalhes</a></li>
+                    <li><a href="doc/catalogo.pdf" target="_blank">Catálogo PDF</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-text">
-                <span class="tag">TECNOLOGIA • PERFORMANCE • INOVAÇÃO</span>
-                <h1>O futuro do seu <span>setup</span> começa aqui.</h1>
-                <p>Encontre notebooks, teclados, mouses e acessórios para transformar sua experiência digital.</p>
-
-                <div class="hero-buttons">
-                    <a href="pages/produtos.html" class="btn-primary">Ver produtos</a>
-                    <a href="#destaques" class="btn-secondary">Explorar loja ↓</a>
-                </div>
+        <section class="apresentacao">
+            <div class="limite">
+                <h1>Tecnologia para o seu dia a dia</h1>
+                <p>Na Nova Tech Store você encontra notebooks e periféricos para estudar, trabalhar e se divertir.</p>
+                <a class="botao" href="pages/produtos.html">Conheça os produtos</a>
             </div>
         </section>
 
-        <section id="destaques" class="destaques">
-            <div class="section-title">
-                <span>DESTAQUES</span>
-                <h2>Monte seu setup</h2>
-                <p>Produtos selecionados para quem leva tecnologia a sério. </p>
+        <section class="secao limite" aria-labelledby="titulo-destaques">
+            <h2 id="titulo-destaques">Produtos em destaque</h2>
+            <div class="lista-destaques">
+                <article class="destaque">
+                    <img src="img/Notebook%20Gamer.png" alt="Notebook gamer preto aberto">
+                    <h3>Notebook Gamer</h3>
+                    <p>Bom desempenho para estudos, jogos e trabalhos.</p>
+                    <a href="pages/detalhes.html">Ver detalhes</a>
+                </article>
+                <article class="destaque">
+                    <img src="img/Teclado%20Mec%C3%A2nico.jpg" alt="Teclado mecânico com iluminação">
+                    <h3>Teclado Mecânico</h3>
+                    <p>Conforto e resposta rápida para o seu setup.</p>
+                    <a href="pages/produtos.html#teclados">Ver produtos</a>
+                </article>
+                <article class="destaque">
+                    <img src="img/Mouse%20Gamer.jpg" alt="Mouse gamer preto">
+                    <h3>Mouse Gamer</h3>
+                    <p>Precisão para tarefas e partidas do dia a dia.</p>
+                    <a href="pages/produtos.html#mouses">Ver produtos</a>
+                </article>
             </div>
+        </section>
 
-            <div class="cards">
-
-                <article class="card">
-                    <div class="card-image">
-                        <img src="img/Notebook Gamer.png"
-                            alt="Notebook Gamer">
-                    </div>
-
-                    <div class="card-content">
-                        <span>PERFORMANCE</span>
-                        <h3>Notebook Gamer</h3>
-                        <p>Potência para jogos, trabalho e criação de conteúdo.</p>
-                        <a href="pages/detalhes.html">Ver detalhes →</a>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-image">
-                        <img src="img/Teclado Mecânico.jpg" alt="Teclado Mecânico">
-                    </div>
-                    <div class="card-content">
-                        <span>GAMING</span>
-                        <h3>Teclado Mecânico</h3>
-                        <p>Precisão, resposta rápida e estilo para seu setup.</p>
-                        <a href="pages/detalhes.html">Ver detalhes →</a>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-image">
-                        <img src="img/Mouse Gamer.jpg" alt="Mouse Gamer">
-                    </div>
-                    <div class="card-content">
-                        <span>PRECISÃO</span>
-                        <h3>Mouse Gamer</h3>
-                        <p>Controle e precisão para elevarsua experiência.</p>
-                        <a href="pages/detalhes.html">Ver detalhes →</a>
-                    </div>
-                </article>
+        <section class="secao contato" id="contato">
+            <div class="limite">
+                <h2>Fale conosco</h2>
+                <p>Este é um formulário demonstrativo. Nenhuma informação será enviada.</p>
+                <form action="#contato" method="get" class="formulario">
+                    <p><label for="nome">Nome:</label><input type="text" id="nome" name="nome" required></p>
+                    <p><label for="email">E-mail:</label><input type="email" id="email" name="email" required></p>
+                    <p><label for="mensagem">Mensagem:</label><textarea id="mensagem" name="mensagem" rows="4"></textarea></p>
+                    <p><button type="submit">Enviar mensagem</button></p>
+                </form>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div>
-            <strong>⚡ Nova Tech Store</strong> <p>Tecnologia para o seu próximo nível.</p>
-        </div>
-        <p>© 2026 Nova Tech Store | Desenvolvido por <a href="https://github.com" target="_blank"> Felix Freitas Jr</a></p>
+    <footer class="rodape">
+        <p><strong>Nova Tech Store</strong> — Tecnologia para o seu próximo nível.</p>
+        <p>Projeto fictício para estudo de HTML5 e CSS3.</p>
     </footer>
-
-    <script src="js/script.js"></script>
 </body>
 </html>
