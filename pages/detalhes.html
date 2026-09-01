@@ -1,90 +1,65 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-
-    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Tech Store | Detalhes do Produto</title>
+    <link rel="icon" href="../img/favicon.png" type="image/png">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/produtos.css">
-    <link rel="stylesheet" href="../css/responsive.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-    <title>Nova Tech Store - Detalhes</title>
 </head>
-
 <body>
-
-    <header class="navbar">
-        <div class="logo">⚡ Nova Tech</div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="../index.html">Início</a></li>
-                <li><a href="produtos.html" class="active">Produtos</a></li>
-                <li><a href="carrinho.html">🛒 Carrinho <span id="cart-count">0</span></a></li>
-                <li><a href="../doc/catalogo.pdf" target="_blank">📄 Catálogo</a></li>
-            </ul>
-        </nav>
+    <header class="cabecalho">
+        <div class="limite">
+            <p class="logo">Nova <span>Tech</span> Store</p>
+            <nav aria-label="Menu principal">
+                <ul class="menu">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a class="ativo" href="detalhes.html">Detalhes</a></li>
+                    <li><a href="../doc/catalogo.pdf" target="_blank">Catálogo PDF</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main class="pagina-detalhes container">
-        <section class="detalhes-produto">
-            <div class="imagem-detalhe">
-                <!-- galeria principal -->
-                <div class="gallery">
-                    <img id="main-image" src="../img/placeholder.png" alt="Imagem do produto">
-                    <div id="thumbs" class="thumbs"></div>
-                </div>
-            </div>
-
-            <div class="informacoes-detalhe">
-                <span class="categoria" id="produto-categoria">CATEGORIA</span>
-                <h1 id="produto-nome">Nome do Produto</h1>
-                <p class="descricao" id="produto-descricao"> Descrição do produto.</p>
-
-                <ul class="especificacoes" id="produto-especificacoes">
-                    <!-- itens preenchidos por JS -->
-                </ul>
-
-                <div class="preco-detalhe">
-                    <strong id="produto-preco">R$ 0,00</strong>
-                </div>
-
-                <div class="acoes">
-                    <div style="display:flex;gap:8px;align-items:center">
-                        <label for="qty" class="text-muted" style="font-weight:700">Qtd</label>
-                        <input id="qty" type="number" min="1" value="1"
-                            style="width:72px;padding:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit">
-                    </div>
-
-                    <div style="display:flex;gap:8px;align-items:center">
-                        <button id="btn-add" class="btn-primary add-to-cart" data-id="" data-name="" data-price="">🛒
-                            Adicionar ao carrinho</button>
-                        <a href="produtos.html" class="btn-secondary">← Voltar aos produtos</a>
-                    </div>
-                </div>
-
-                <div id="related-section" style="margin-top:18px">
-                    <h3 style="margin-bottom:8px">Produtos relacionados</h3>
-                    <div id="related-list" style="display:flex;gap:12px;flex-wrap:wrap"></div>
-                </div>
-
-            </div>
+    <main class="limite pagina">
+        <section class="titulo-pagina">
+            <h1>Detalhes do produto</h1>
+            <p>Exemplo de uma página com informações de um item do catálogo.</p>
         </section>
 
+        <article class="detalhe-produto">
+            <div class="imagem-produto">
+                <img src="../img/Notebook%20Gamer.png" alt="Notebook gamer preto aberto">
+            </div>
+            <div class="descricao-produto">
+                <p class="categoria">NOTEBOOK</p>
+                <h2>Notebook Gamer</h2>
+                <p>Uma opção para quem precisa de um computador para estudos, trabalho e momentos de lazer.</p>
+                <p class="preco">R$ 4.999,90</p>
+                <h3>Especificações</h3>
+                <ul>
+                    <li>Tela de 15,6 polegadas</li>
+                    <li>Teclado com iluminação</li>
+                    <li>Armazenamento SSD</li>
+                    <li>Conexões USB e HDMI</li>
+                </ul>
+                <p><a class="botao" href="produtos.html">Voltar aos produtos</a></p>
+            </div>
+        </article>
+
+        <section class="tabela-secao" aria-labelledby="titulo-comparacao">
+            <h2 id="titulo-comparacao">Resumo do item</h2>
+            <table>
+                <thead><tr><th>Produto</th><th>Categoria</th><th>Disponibilidade</th></tr></thead>
+                <tbody><tr><td>Notebook Gamer</td><td>Notebook</td><td>Produto fictício para demonstração</td></tr></tbody>
+            </table>
+        </section>
     </main>
 
-    <footer>
-        <div>
-            <strong>⚡ Nova Tech Store</strong> <p>Tecnologia para o seu próximo nível.</p>
-        </div>
-        <p>© 2026 Nova Tech Store | Desenvolvido por <a href="https://github.com" target="_blank"> Felix Freitas Jr</a></p>
+    <footer class="rodape">
+        <p><strong>Nova Tech Store</strong> — Tecnologia para o seu próximo nível.</p>
+        <p>Projeto fictício para estudo de HTML5 e CSS3.</p>
     </footer>
-
-    <script src="../js/script.js"></script>
-    <script src="../js/produtos.js"></script>    
-
 </body>
 </html>

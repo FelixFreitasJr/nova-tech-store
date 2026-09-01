@@ -1,175 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+    <title>Nova Tech Store | Produtos</title>
+    <link rel="icon" href="../img/favicon.png" type="image/png">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/produtos.css">
-    <link rel="stylesheet" href="../css/responsive.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-    <title>Nova Tech Store - Produtos</title>
 </head>
-
 <body>
-
-    <header class="navbar">
-        <div class="logo">⚡ Nova Tech</div>
-
-        <nav>
-            <ul class="nav-links">
-                <li><a href="../index.html">Início</a></li>
-                <li><a href="produtos.html" class="active">Produtos</a></li>
-                <li><a href="carrinho.html">🛒 Carrinho <span id="cart-count">0</span></a></li>
-                <li><a href="../doc/catalogo.pdf" target="_blank">📄 Catálogo</a></li>
-            </ul>
-        </nav>
+    <header class="cabecalho">
+        <div class="limite">
+            <p class="logo">Nova <span>Tech</span> Store</p>
+            <nav aria-label="Menu principal">
+                <ul class="menu">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a class="ativo" href="produtos.html">Produtos</a></li>
+                    <li><a href="detalhes.html">Detalhes</a></li>
+                    <li><a href="../doc/catalogo.pdf" target="_blank">Catálogo PDF</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main class="pagina-produtos">
-
-        <section class="cabecalho-produtos">
-            <span>CATÁLOGO NOVA TECH</span>
-            <h1>Encontre seu próximo <strong>equipamento.</strong></h1>
-            <p>Tecnologia, performance e qualidade para elevar seu setup.</p>
+    <main class="limite pagina">
+        <section class="titulo-pagina">
+            <h1>Produtos</h1>
+            <p>Confira alguns produtos disponíveis na Nova Tech Store.</p>
         </section>
 
-        <section class="grade-produtos">
-
-            <!-- PRODUTO 1 -->
-            <article class="produto">
-                <div class="produto-imagem">
-                    <img src="../img/Notebook Gamer.png" alt="Notebook Gamer">
-                </div>
-                <div class="produto-info">
-                    <span class="categoria">NOTEBOOK</span>
-                    <h2>Notebook Gamer</h2>
-                    <p>Alta performance para jogos, estudos e trabalho.</p>
-                    <div class="produto-final">
-                        <strong>R$ 4.999,90</strong>
-                        <div>
-                            <a href="detalhes.html?id=notebook-001" class="ver-detalhes">Ver detalhes</a>
-                            <button class="add-to-cart" data-id="notebook-001" data-name="Notebook Gamer"
-                                data-price="4999.90">Adicionar</button>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- PRODUTO 2 -->
-            <article class="produto">
-                <div class="produto-imagem">
-                    <img src="../img/Notebook Gamer1.png" alt="Notebook Gamer Pro">
-                </div>
-                <div class="produto-info">
-                    <span class="categoria">NOTEBOOK</span>
-                    <h2>Notebook Gamer Pro</h2>
-                    <p>Mais desempenho para jogos e aplicações pesadas.</p>
-                    <div class="produto-final">
-                        <strong>R$ 6.499,90</strong>
-                        <div>
-                            <a href="detalhes.html?id=notebook-002" class="ver-detalhes">Ver detalhes</a>
-                            <button class="add-to-cart" data-id="notebook-002" data-name="Notebook Gamer Pro"
-                                data-price="6499.90">Adicionar</button>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- PRODUTO 3 -->
-            <article class="produto">
-                <div class="produto-imagem">
-                    <img src="../img/Notebook Gamer2.png" alt="Notebook Gamer Ultra">
-                </div>
-                <div class="produto-info">
-                    <span class="categoria">NOTEBOOK</span>
-                    <h2>Notebook Gamer Ultra</h2>
-                    <p>Experiência premium para usuários exigentes.</p>
-                    <div class="produto-final">
-                        <strong>R$ 8.999,90</strong>
-                        <div>
-                            <a href="detalhes.html?id=notebook-003" class="ver-detalhes">Ver detalhes</a>
-                            <button class="add-to-cart" data-id="notebook-003" data-name="Notebook Gamer Ultra"
-                                data-price="8999.90">Adicionar</button>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- PRODUTO 4 -->
-            <article class="produto">
-                <div class="produto-imagem">
-                    <img src="../img/Teclado Mecânico.jpg" alt="Teclado Mecânico">
-                </div>
-                <div class="produto-info">
-                    <span class="categoria">PERIFÉRICO</span>
-                    <h2>Teclado Mecânico</h2>
-                    <p>Precisão e resposta rápida para jogos e trabalho.</p>
-                    <div class="produto-final">
-                        <strong>R$ 349,90</strong>
-                        <div>
-                            <a href="detalhes.html?id=teclado-001" class="ver-detalhes">Ver detalhes</a>
-                            <button class="add-to-cart" data-id="teclado-001" data-name="Teclado Mecânico"
-                                data-price="349.90">Adicionar</button>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- PRODUTO 5 -->
-            <article class="produto">
-                <div class="produto-imagem">
-                    <img src="../img/Teclado Mecânico1.jpg" alt="Teclado Mecânico RGB">
-                </div>
-                <div class="produto-info">
-                    <span class="categoria">GAMING</span>
-                    <h2>Teclado Mecânico RGB</h2>
-                    <p>Iluminação RGB e precisão para seu setup.</p>
-                    <div class="produto-final">
-                        <strong>R$ 429,90</strong>
-                        <div>
-                            <a href="detalhes.html?id=teclado-002" class="ver-detalhes">Ver detalhes</a>
-                            <button class="add-to-cart" data-id="teclado-002" data-name="Teclado Mecânico RGB"
-                                data-price="429.90">Adicionar</button>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- PRODUTO 6 -->
-            <article class="produto">
-                <div class="produto-imagem">
-                    <img src="../img/Mouse Gamer.jpg" alt="Mouse Gamer">
-                </div>
-                <div class="produto-info">
-                    <span class="categoria">GAMING</span>
-                    <h2>Mouse Gamer</h2>
-                    <p>Sensor de alta precisão para jogos competitivos.</p>
-                    <div class="produto-final">
-                        <strong>R$ 199,90</strong>
-                        <div>
-                            <a href="detalhes.html?id=mouse-001" class="ver-detalhes">Ver detalhes</a>
-                            <button class="add-to-cart" data-id="mouse-001" data-name="Mouse Gamer"
-                                data-price="199.90">Adicionar</button>
-                        </div>
-                    </div>
-                </div>
-            </article>
+        <section aria-labelledby="titulo-catalogo">
+            <h2 id="titulo-catalogo">Catálogo da loja</h2>
+            <div class="grade-produtos">
+                <article class="produto">
+                    <img src="../img/Notebook%20Gamer.png" alt="Notebook gamer preto aberto">
+                    <h3>Notebook Gamer</h3>
+                    <p>Notebook para estudos, jogos e tarefas do dia a dia.</p>
+                    <p class="preco">R$ 4.999,90</p>
+                    <a class="botao" href="detalhes.html">Ver detalhes</a>
+                </article>
+                <article class="produto">
+                    <img src="../img/Notebook%20Gamer1.png" alt="Notebook gamer com tela colorida">
+                    <h3>Notebook Gamer Pro</h3>
+                    <p>Mais desempenho para programas e jogos mais exigentes.</p>
+                    <p class="preco">R$ 6.499,90</p>
+                    <a class="botao" href="detalhes.html">Ver detalhes</a>
+                </article>
+                <article class="produto" id="teclados">
+                    <img src="../img/Teclado%20Mec%C3%A2nico.jpg" alt="Teclado mecânico com iluminação">
+                    <h3>Teclado Mecânico</h3>
+                    <p>Teclas confortáveis e resposta rápida para o setup.</p>
+                    <p class="preco">R$ 349,90</p>
+                    <a class="botao" href="detalhes.html">Ver detalhes</a>
+                </article>
+                <article class="produto" id="mouses">
+                    <img src="../img/Mouse%20Gamer.jpg" alt="Mouse gamer preto">
+                    <h3>Mouse Gamer</h3>
+                    <p>Mouse com boa precisão e design confortável.</p>
+                    <p class="preco">R$ 199,90</p>
+                    <a class="botao" href="detalhes.html">Ver detalhes</a>
+                </article>
+            </div>
         </section>
+
+        <p class="aviso">Para ver a lista completa, abra nosso <a href="../doc/catalogo.pdf" target="_blank">catálogo em PDF</a>.</p>
     </main>
 
-    <footer>
-        <div>
-            <strong>⚡ Nova Tech Store</strong> <p>Tecnologia para o seu próximo nível.</p>
-        </div>
-        <p>© 2026 Nova Tech Store | Desenvolvido por <a href="https://github.com" target="_blank"> Felix Freitas Jr</a></p>
+    <footer class="rodape">
+        <p><strong>Nova Tech Store</strong> — Tecnologia para o seu próximo nível.</p>
+        <p>Projeto fictício para estudo de HTML5 e CSS3.</p>
     </footer>
-
-    <script src="../js/script.js"></script>
 </body>
-
 </html>
